@@ -41,7 +41,14 @@ $(document).ready(function() {
 				'<h2>Purpose</h2>' +
                 '<p>This example is used to show how to code up HTML forms.' +
                 '   This will be used as a starting point for server side' +
-                '   web form management.</p>',
+                '   web form management. The form is a static page and is not' +
+                '   a Flask template. The next "server-side" example will be' +
+                '   a Flask implementation.</p><br>' +
+                '<p>This form is validated client-side, in javascript. If ' +
+                '   validation fails, the user can update the form with correct' +
+                '   data. Once the form validates, it is submitted to the server' +
+                '   for processing. Validating on the client side keeps validation' + 
+                '   fast and removes a round-trip HTTP request.</p>',
 			overlayClassName:'infoDialogOverlay',
 			showCloseButton:false});
 	}
