@@ -7,8 +7,15 @@ Utils.numberWithCommas = function(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function handleForm(form) {
+function validatePassword(pw) {
+    return pw.length > 0;
+}
+
+function validateForm(form) {
     // Call various validate handlers to check for proper values.
+    if (validatePassword(form.pw.value) == false) {
+        return false;
+    }
     console.log("Email: " + form.email.value);
     console.log("Name: " + form.firstname.value + " " + form.lastname.value);
     console.log("City: " + form.city.value);
@@ -21,7 +28,7 @@ function handleForm(form) {
     else
         console.log("Gender: " + "not specified");
     console.log("Stay signed in?: " + form.signin_remember.checked);
-    return true;
+    return true; // set to true to have form cleared after submission
 }
 
 $(document).ready(function() {
