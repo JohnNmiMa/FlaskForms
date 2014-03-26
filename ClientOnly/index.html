@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Web Forms</title>
+		<link href="css/smooth/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="vex-2.0.1/css/vex.css" />
+		<link rel="stylesheet" href="vex-2.0.1/css/vex-theme-default.css" />
+		<link type="text/css" rel="stylesheet" href="font-awesome/css/font-awesome.css">
+		<link type="text/css" rel="stylesheet" href="main.css">
+		<script src="js/jquery-2.0.3.js"></script>
+		<script src="js/jquery-ui-1.10.3.custom.js"></script>
+        <script src="vex-2.0.1/js/vex.combined.min.js"></script>
+		<script>vex.defaultOptions.className = 'vex-theme-default';</script>
+		<script type="text/javascript" src="application.js"></script>
+	</head>
+	<body>
+        <div id="outer">
+            <header>
+                <h1 id="title">Web Form Example</h2>
+                <span id="info" class="fa-stack">
+                  <i class="fa fa-circle-o fa-stack-2x"></i>
+                  <i class="fa fa-info fa-stack-1x"></i>
+                </span>
+            </header>
+            <div id="content">
+                <center>
+                    <div id="signin">
+                        <form id="signupForm" action="" method="post" onSubmit="return handleForm(this)">
+                            <h2>Sign In Please</h2>
+                            <input class="ti" type="text" id='email' name="email" placeholder="Email address">
+                            <input class="ti" type="password" id='pw' name="pw" placeholder="Password">
+                            <input class="ti" type="text" id='firstname' name="first_name" placeholder="First name">
+                            <input class="ti" type="text" id='lastname' name="last_name" placeholder="Last name">
+                            <input class="ti" type="text" id='city' name="city" placeholder="City">
+                            <input class="ti" type="text" id='state' name="state" placeholder="State">
+                            <input class="ti" type="zipcode" id='zipcode' name="zipcode" placeholder="Zipcode">
+                            <ul id="clickers">
+                                <li>
+                                    <input id="male" type="radio" name="gender" value="Male"/>
+                                    <label for="male">Male</label>
+                                </li>
+                                <li>
+                                    <input id="female" type="radio" name="gender" value="Female"/>
+                                    <label for="female">Female</label>
+                                </li>
+                            </ul>
+                            <fieldset>
+                                <input class="ti" type="submit" id="signin_submit" name="signin_submit" value="Sign In"/>
+                                <label>
+                                    <input type="checkbox" name="signin_remember"/>Stay signed in?
+                                </label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </center>
+            </div>
+        </div>
+	</body>
+</html>
