@@ -1,0 +1,33 @@
+{% extends "header.html" %}
+{% block content %}
+    <center>
+        <div id="signin">
+            <form id="signupForm" action="/home" method="post" onSubmit="return validateForm(this)">
+                <h2>Sign Up Please</h2>
+                <input class="ti" type="text" id='email' name="email" placeholder="Email address">
+                <input class="ti" type="password" id='pw' name="pw" placeholder="Password">
+                <input class="ti" type="text" id='firstname' name="first_name" placeholder="First name">
+                <input class="ti" type="text" id='lastname' name="last_name" placeholder="Last name">
+                <input class="ti" type="text" id='city' name="city" placeholder="City">
+                <input class="ti" type="text" id='state' name="state" placeholder="State">
+                <input class="ti" type="zipcode" id='zipcode' name="zipcode" placeholder="Zipcode">
+                <ul id="clickers">
+                    <li>
+                        <input id="male" type="radio" name="gender" value="Male"/>
+                        <label for="male">Male</label>
+                    </li>
+                    <li>
+                        <input id="female" type="radio" name="gender" value="Female"/>
+                        <label for="female">Female</label>
+                    </li>
+                </ul>
+                <fieldset>
+                    <input class="ti" type="submit" id="signin_submit" name="signin_submit" value="Sign Up"/>
+                    <label>
+                        <input type="checkbox" name="signin_remember"/>Stay signed in?
+                    </label>
+                </fieldset>
+            </form>
+        </div>
+    </center>
+{% endblock %}

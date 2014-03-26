@@ -6,3 +6,9 @@
 *.html~
 
 *.swp
+
+*.py~
+
+*.txt~
+
+*.feature~

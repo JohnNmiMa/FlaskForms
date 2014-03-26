@@ -1,0 +1,12 @@
+Get flask directory stucture setup - DONE
+Implement routes.py - DONE
+Implement form templates
+* layout.html - contains header and form shells - DONE
+  + header.html - implement the header (extends layout.html) - DONE
+    - signup_form.html - implements the form (extends header.html) - DONE
+    - home.html - implements page after user signs up (extends header.html)
+Add CSS - DONE
+Add client-side javascript - DONE
+Get form HTTP POST request, and get data from the form
+Push the data into the home.html template
+Add results page - display form data on a new "home.hmtl" page
