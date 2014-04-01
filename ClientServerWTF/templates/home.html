@@ -1,0 +1,16 @@
+{% extends "header.html" %}
+{% block content %}
+    <div id="results">
+        <p>{{form.gender.data}}</p>
+        {% if form.gender.data == 'Male' %}
+            {% set gender = 'Mr.' %}
+        {% elif form.gender.data == 'Female' %}
+            {% set gender = 'Ms.' %}
+        {% else %}
+            {% set gender = "" %}
+        {% endif %}
+        <h2 id='welcome'>Welcome {{ gender + " " + form.firstname.data + " " + form.lastname.data }}</h2>
+        <p>Email: {{ form.email.data }}</p>
+        <p>Place: {{ form.city.data + " " + form.state.data + " " + form.zipcode.data }}</p>
+    </div>
+{% endblock %}

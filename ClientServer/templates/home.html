@@ -1,6 +1,23 @@
 {% extends "header.html" %}
 {% block content %}
   <div id="results">
-    Here are your results!
+    {% if formdata %}
+        {% if formdata['gender'] == 'Male' %}
+            {% set gender = 'Mr.' %}
+        {% elif formdata['gender'] == 'Female' %}
+            {% set gender = 'Ms.' %}
+        {% else %}
+            {% set gender = "" %}
+        {% endif %}
+        <h2 id='welcome'>Welcome {{ gender + " " + formdata['first_name'] + " " + formdata['last_name'] }}</h2>
+        <p>Email: {{ formdata['email'] }}</p>
+        <p>Place: {{ formdata['city'] + " " + formdata['state'] + " " + formdata['zipcode'] }}</p>
+        <p>Formdata:</p>
+        <ul id='formdata'>
+            {% for entry in formdata %}
+                <li>{{ entry + ": " + formdata[entry] }} </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
   </div>
 {% endblock %}

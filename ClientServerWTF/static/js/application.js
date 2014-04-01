@@ -7,42 +7,6 @@ Utils.numberWithCommas = function(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function validatePassword(pw) {
-    return pw.length > 0;
-}
-
-// Use VEX to show each validation error
-function showFormValidateDialog(str) {
-    var somevar = "";
-    vex.open({
-        contentClassName: 'validateDialog',
-        content: 
-            '<p class="validate">' + str + '</h4>',
-        overlayClassName:'validateDialogOverlay',
-        showCloseButton:true});
-}
-
-function validateForm(form) {
-    // Call various validate handlers to check for proper values.
-    if (validatePassword(form.pw.value) == false) {
-        showFormValidateDialog('Please enter a valid password');
-        return false;
-    }
-    console.log("Email: " + form.email.value);
-    console.log("Name: " + form.firstname.value + " " + form.lastname.value);
-    console.log("City: " + form.city.value);
-    console.log("State: " + form.state.value);
-    console.log("Zip Code: " + form.zipcode.value);
-    if (form.gender[0].checked)
-        console.log("Gender: " + form.gender[0].value);
-    else if (form.gender[1].checked)
-        console.log("Gender: " + form.gender[1].value);
-    else
-        console.log("Gender: " + "not specified");
-    console.log("Stay signed in?: " + form.signin_remember.checked);
-    return true; // set to true to have form cleared after submission
-}
-
 $(document).ready(function() {
 
     // Use VEX dialogs to show the application instructions
@@ -64,7 +28,6 @@ $(document).ready(function() {
 			overlayClassName:'infoDialogOverlay',
 			showCloseButton:false});
 	}
-
 
     $('#info').click(function() {
 		showInfoDialog();

@@ -12,3 +12,7 @@
 *.txt~
 
 *.feature~
+
+*.pyc
+
+*.cfg~
