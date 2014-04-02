@@ -1,10 +1,9 @@
 {% extends "header.html" %}
 {% block content %}
     <div id="results">
-        <p>{{form.gender.data}}</p>
-        {% if form.gender.data == 'Male' %}
+        {% if form.gender.data == 'male' %}
             {% set gender = 'Mr.' %}
-        {% elif form.gender.data == 'Female' %}
+        {% elif form.gender.data == 'female' %}
             {% set gender = 'Ms.' %}
         {% else %}
             {% set gender = "" %}
@@ -13,4 +12,10 @@
         <p>Email: {{ form.email.data }}</p>
         <p>Place: {{ form.city.data + " " + form.state.data + " " + form.zipcode.data }}</p>
     </div>
+    <p>Formdata:</p>
+    <ul id='formdata'>
+        {% for item in form %}
+            <li>{{ item.name + " : " + item.data|escape }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}

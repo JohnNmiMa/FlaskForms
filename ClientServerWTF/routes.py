@@ -1,4 +1,5 @@
 #!/usr/local/bin/python
+import pdb
 import pickle
 from flask import Flask, redirect, url_for, request, render_template, flash
 from form import SignupForm
@@ -30,6 +31,7 @@ def home():
     # Get the form data (just unpickle it) and render the home page
     with open('formdata', 'r') as formfile:
         form = pickle.load(formfile)
+        pdb.set_trace()
         return render_template('home.html', form=form)
 
  
