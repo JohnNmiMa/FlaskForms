@@ -2,6 +2,18 @@
 {% block content %}
     <center>
         <div id="signin">
+            {% with errors = get_flashed_messages(category_filter=['error']) %}
+                {% if errors %}
+                    <div id="formErrors">
+                        <table>
+                            {%- for error in errors %}
+                                <tr>{{ error|safe }}</tr>
+                            {% endfor -%}
+                        </table>
+                    </div>
+                {% endif %}
+            {% endwith %}
+
             <form id="signupForm" action="/" method="post">
                 {{form.hidden_tag()}}
                 <h2>Sign Up Please</h2>
